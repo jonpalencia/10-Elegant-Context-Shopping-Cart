@@ -3,7 +3,7 @@ import { CartContext } from '../store/shopping-cart-context';
 import { DUMMY_PRODUCTS } from '../dummy-products';
 
 export default function Product(props) {
-  const { items, addItemToCart } = useContext(CartContext);
+  const { addItemToCart } = useContext(CartContext);
   const { id, image, title, price, description } = props;
 
   return (
