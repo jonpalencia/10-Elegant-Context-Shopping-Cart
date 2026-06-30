@@ -1,11 +1,5 @@
-export default function Product({
-  id,
-  image,
-  title,
-  price,
-  description,
-  onAddToCart,
-}) {
+export default function Product(props) {
+  const { id, image, title, price, description, onAddToCart } = props;
   return (
     <article className="product">
       <img src={image} alt={title} />
