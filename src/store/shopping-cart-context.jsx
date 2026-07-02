@@ -1,4 +1,4 @@
-import { createContext, useState, useContext, useReducer } from 'react';
+import { createContext, useContext, useReducer } from 'react';
 import { DUMMY_PRODUCTS } from '../dummy-products';
 
 export const CartContext = createContext({
@@ -70,16 +70,16 @@ export default function CartContextComponent({ children }) {
     },
   );
 
-  function handleAddItemToCart(id) {
+  const handleAddItemToCart = function (id) {
     shoppingCartDispatch({
       type: 'ADD_ITEM',
       payload: {
         id,
       },
     });
-  }
+  };
 
-  function handleUpdateCartItemQuantity(productId, amount) {
+  const handleUpdateCartItemQuantity = function (productId, amount) {
     shoppingCartDispatch({
       type: 'UPDATE_ITEM',
       payload: {
@@ -87,7 +87,7 @@ export default function CartContextComponent({ children }) {
         amount,
       },
     });
-  }
+  };
 
   // This is the actual value that you will pass on to the Context created. = <CartContext.Provider value={cartCtx}>
   const cartCtx = {
