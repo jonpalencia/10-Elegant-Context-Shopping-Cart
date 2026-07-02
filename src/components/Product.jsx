@@ -3,7 +3,7 @@ import { CartContext } from '../store/shopping-cart-context';
 import { DUMMY_PRODUCTS } from '../dummy-products';
 
 export default function Product(props) {
-  const { addItemToCart } = useContext(CartContext);
+  const { handleAddItemToCart } = useContext(CartContext);
   const { id, image, title, price, description } = props;
 
   return (
@@ -16,7 +16,7 @@ export default function Product(props) {
           <p>{description}</p>
         </div>
         <p className="product-actions">
-          <button onClick={() => addItemToCart(id)}>Add to Cart</button>
+          <button onClick={() => handleAddItemToCart(id)}>Add to Cart</button>
         </p>
       </div>
     </article>
